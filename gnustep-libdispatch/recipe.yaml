@@ -1,0 +1,38 @@
+context:
+  name: gnustep-libdispatch
+  version: 5.10.1
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/swiftlang/swift-corelibs-libdispatch/archive/refs/tags/swift-${{ version }}-RELEASE.tar.gz
+    sha256: affa3544b0fdb60f8f175bc0d2846177436d5848ef8ca73e3e560d23986f38b3
+
+build:
+  number: 0
+  script: build-libdispatch.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - ninja
+  host:
+    - gnustep-make
+    - ${{ stdlib('c') }}
+  run:
+    - gnustep-make
+    - ${{ stdlib('c') }}
+
+about:
+  homepage: https://github.com/swiftlang/swift-corelibs-libdispatch
+  license: Apache-2.0 WITH Swift-exception
+  license_file: LICENSE
+  summary: GNUstep Objective-C 2.0 Runtime
+
+extra:
+  recipe-maintainers:
+    - ethanc8
