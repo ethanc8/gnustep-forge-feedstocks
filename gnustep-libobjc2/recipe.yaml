@@ -11,7 +11,7 @@ source:
     sha256: 768ea8c5bd0999a29b5d15781125494f986456c1dc5c51d370fb31852cd31ea1
 
 build:
-  number: 0
+  number: 1
   script: build-libobjc2.sh
 
 requirements:
@@ -19,8 +19,10 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
-    - gnustep-make
     - ninja
+  host:
+    - gnustep-make
+    - ${{ stdlib('c') }}
   run:
     - gnustep-make
     - ${{ stdlib('c') }}

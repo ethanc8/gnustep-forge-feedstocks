@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$PREFIX/GNUstep/System/Library/Makefiles/GNUstep.sh"
+
 export CC="clang"
 export CXX="clang++"
 export LD="$(which ld.gold)"
@@ -7,7 +9,7 @@ export LDFLAGS="-fuse-ld=$LD"
 
 # pre-create some directories
 mkdir -p "$PREFIX/GNUstep/Local/Library/Libraries"
-mkdir -p "$PREFIX/GNUstep/Local/Library/Headers"c
+mkdir -p "$PREFIX/GNUstep/Local/Library/Headers"
 
 mkdir build
 cd build
@@ -22,9 +24,9 @@ extra_cmake_args=(
 )
 
 cmake -GNinja ${CMAKE_ARGS} "${extra_cmake_args[@]}" \
-    -DCMAKE_PREFIX_PATH="$PREFIX" \
-    -DCMAKE_INSTALL_PREFIX="$PREFIX" \
-    "$SRC_DIR"
+    "$SRC_DIR" \
+    # -DCMAKE_PREFIX_PATH="$PREFIX" \
+    # -DCMAKE_INSTALL_PREFIX="$PREFIX" \
 
 ninja
 ninja install
