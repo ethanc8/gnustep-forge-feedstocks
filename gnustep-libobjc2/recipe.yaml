@@ -28,8 +28,7 @@ requirements:
 about:
   homepage: https://github.com/gnustep/libobjc2
   license: MIT
-  # license_file: LICENSE
-  # FIXME: It fails to put the license file into the package
+  license_file: COPYING
   summary: GNUstep Objective-C 2.0 Runtime
 
 extra:
