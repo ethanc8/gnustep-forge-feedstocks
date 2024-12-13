@@ -1,0 +1,5 @@
+output/
+workdir/
+# pixi environments
+.pixi
+

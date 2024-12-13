@@ -1,0 +1,35 @@
+context:
+  name: gnustep-make
+  version: 2.9.2
+  tag: make-2_9_2
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/gnustep/tools-make/archive/refs/tags/${{ tag }}.tar.gz
+    sha256: b3fdee058879675f6979c553fb6172b160ca79ffd0f170f51379326b7922941a
+
+build:
+  number: 0
+  script: build-gsmake.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
+    - make
+  run:
+    - ${{ stdlib('c') }}
+    - make
+
+about:
+  homepage: https://github.com/gnustep/tools-make
+  license: GPL-3.0-only
+  license_file: COPYING
+  summary: GNUstep build system based on GNU Make
+
+extra:
+  recipe-maintainers:
+    - ethanc8
