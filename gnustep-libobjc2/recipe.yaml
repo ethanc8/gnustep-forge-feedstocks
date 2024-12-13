@@ -1,0 +1,37 @@
+context:
+  name: gnustep-libobjc2
+  version: 2.2.1
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/gnustep/libobjc2/archive/refs/tags/v${{ version }}.tar.gz
+    sha256: 768ea8c5bd0999a29b5d15781125494f986456c1dc5c51d370fb31852cd31ea1
+
+build:
+  number: 0
+  script: build-libobjc2.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - gnustep-make
+    - ninja
+  run:
+    - gnustep-make
+    - ${{ stdlib('c') }}
+
+about:
+  homepage: https://github.com/gnustep/libobjc2
+  license: MIT
+  # license_file: LICENSE
+  # FIXME: It fails to put the license file into the package
+  summary: GNUstep Objective-C 2.0 Runtime
+
+extra:
+  recipe-maintainers:
+    - ethanc8
