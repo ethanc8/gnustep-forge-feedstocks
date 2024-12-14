@@ -1,0 +1,51 @@
+context:
+  name: libgnustep-base
+  version: 1.30.0
+  tag: base-1_30_0
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/gnustep/libs-base/archive/refs/tags/${{ tag }}.tar.gz
+    sha256: b3792acc5aa0013ef51f3d02eaaf69fcce05ca6fe9924999b3565ebeb87d9d21
+
+build:
+  number: 0
+  script: build-base.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - ninja
+  host:
+    - gnustep-make
+    - gnustep-libobjc2
+    - gnustep-libdispatch
+    - ${{ stdlib('c') }}
+    - libffi
+    - icu
+    - gnutls
+    - libxml2
+    - libxslt
+    - avahi
+    - zlib
+    - libcurl
+    - iconv
+    - libiconv
+
+
+about:
+  homepage: https://github.com/gnustep/libs-base
+  license: LGPL-2.0-or-later AND GPL-2.0-or-later
+  license_file: 
+    - COPYING.LIB
+    - COPYING
+  summary: GNUstep implementation of Foundation Kit (Objective-C standard library)
+
+extra:
+  recipe-maintainers:
+    - ethanc8
