@@ -45,12 +45,12 @@ requirements:
     - xorg-libxt
 
 about:
-  homepage: https://github.com/gnustep/libs-gui
+  homepage: https://github.com/gnustep/libs-back
   license: LGPL-2.0-or-later AND GPL-2.0-or-later
   license_file: 
     - COPYING.LIB
     - COPYING
-  summary: GNUstep implementation of AppKit (Cocoa-compatible GUI toolkit)
+  summary: Backend for libgnustep-gui
 
 extra:
   recipe-maintainers:
