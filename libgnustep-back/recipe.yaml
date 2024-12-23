@@ -1,0 +1,57 @@
+context:
+  name: libgnustep-back
+  # Unfortunately gui-0.31.1 doesn't build and we used the master branch of gui.
+  version: 0.32.0a20241105
+  commit: 03a2e7e152320ec2bbd071f7ca1177672011f130 # 2024-11-05
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/gnustep/libs-back/archive/${{ commit }}.tar.gz
+    sha256: 4f868655c9d30ee5efbb0236800898efcc9406860e1857f3bb09243cf8cc4141
+
+build:
+  number: 0
+  script: build-back.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - ninja
+  host:
+    # following https://packages.debian.org/sid/gnustep-back0.31-cairo and https://github.com/gnustep/libs-back/blob/master/INSTALL
+    - ${{ stdlib('c') }}
+    - gnustep-make
+    - gnustep-libobjc2
+    - gnustep-libdispatch
+    - libgnustep-base
+    - libgnustep-gui
+    - cairo
+    - fontconfig
+    - freetype
+    - libgl-devel
+    - xorg-libx11
+    - xorg-libxcursor
+    - xorg-libxext
+    - xorg-libxfixes
+    - xorg-libxft
+    - xorg-libxmu
+    - xorg-libxrandr
+    - xorg-libxrender
+    - xorg-libxt
+
+about:
+  homepage: https://github.com/gnustep/libs-gui
+  license: LGPL-2.0-or-later AND GPL-2.0-or-later
+  license_file: 
+    - COPYING.LIB
+    - COPYING
+  summary: GNUstep implementation of AppKit (Cocoa-compatible GUI toolkit)
+
+extra:
+  recipe-maintainers:
+    - ethanc8
