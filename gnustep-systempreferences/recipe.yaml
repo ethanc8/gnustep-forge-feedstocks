@@ -1,16 +1,15 @@
 context:
   name: gnustep-systempreferences
-  # Unfortunately gui-0.31.1 doesn't build and we used the master branch of gui.
-  version: 0.32.0a20241105
-  commit: 03a2e7e152320ec2bbd071f7ca1177672011f130 # 2024-11-05
+  version: 1.2.1
+  tag: systempreferences-1_2_1
 
 package:
   name: ${{ name }}
   version: ${{ version }}
 
 source:
-  - url: https://github.com/gnustep/libs-back/archive/${{ commit }}.tar.gz
-    sha256: 4f868655c9d30ee5efbb0236800898efcc9406860e1857f3bb09243cf8cc4141
+  - url: https://github.com/gnustep/apps-systempreferences/archive/refs/tags/${{ tag }}.tar.gz
+    sha256: 40125db52808abef4a08433c43ab856dcad3c24f909531655fc794145fd2c8ab
 
 build:
   number: 0
@@ -30,20 +29,6 @@ requirements:
     - libgnustep-base
     - libgnustep-gui
     - libgnustep-back
-    # FIXME: Why does it need X11 headers?
-    - cairo
-    - fontconfig
-    - freetype
-    - libgl-devel
-    - xorg-libx11
-    - xorg-libxcursor
-    - xorg-libxext
-    - xorg-libxfixes
-    - xorg-libxft
-    - xorg-libxmu
-    - xorg-libxrandr
-    - xorg-libxrender
-    - xorg-libxt
 
 about:
   homepage: https://github.com/gnustep/apps-systempreferences
