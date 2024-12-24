@@ -34,7 +34,7 @@ requirements:
     # TODO: Make a conda package for libicns1
     - icu
     - libjpeg-turbo
-    - imagemagick
+    - imagemagick # TODO: Make this a runtime dependency
     - libpng
     - libtiff
     # INSTALL recommends to have aspell, cups, audiofile, and portaudio, but Debian doesn't have those
