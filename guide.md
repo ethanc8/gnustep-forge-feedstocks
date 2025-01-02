@@ -30,6 +30,7 @@ Packages are either specified in `meta.yaml` files (which include semantically s
 * [ ] Fix cross-compilation on GNU/Linux
 * [ ] Support Windows (should we do MinGW or MSVC?)
 * [ ] Support macOS (should we do `ng-gnu-gnu`, `apple-gnu-gnu`, or `apple-apple-apple`?)
+* [ ] Support `pixi build`
 
 ## Quick start/tutorial
 
@@ -59,14 +60,18 @@ channels: # package repositories
   - conda-forge # Community distribution of conda packages
   - nodefaults # Disable the `defaults` channel if for some reason it's enabled
 dependencies:
+  # GNUstep dependencies
   - gnustep-make
   - gnustep-libdispatch
   - gnustep-libobjc2
   - libgnustep-base
   - libgnustep-gui
   - libgnustep-back
-  - gnustep-systempreferences
   - imagemagick # This is here because I need to fix the dependency list
+  - clang=18
+  - clangxx=18
+  # Applications
+  - gnustep-systempreferences
 ```
 
 Now, you can use `conda` or `mamba` to install the dependencies:
