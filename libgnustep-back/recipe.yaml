@@ -13,7 +13,7 @@ source:
     sha256: 4f868655c9d30ee5efbb0236800898efcc9406860e1857f3bb09243cf8cc4141
 
 build:
-  number: 0
+  number: 1
   script: build-back.sh
 
 requirements:
@@ -43,6 +43,8 @@ requirements:
     - xorg-libxrandr
     - xorg-libxrender
     - xorg-libxt
+  run_exports:
+    - libgnustep-back
 
 about:
   homepage: https://github.com/gnustep/libs-back

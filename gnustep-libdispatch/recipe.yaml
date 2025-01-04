@@ -11,7 +11,7 @@ source:
     sha256: affa3544b0fdb60f8f175bc0d2846177436d5848ef8ca73e3e560d23986f38b3
 
 build:
-  number: 0
+  number: 1
   script: build-libdispatch.sh
 
 requirements:
@@ -26,6 +26,8 @@ requirements:
   run:
     - gnustep-make
     - ${{ stdlib('c') }}
+  run_exports:
+    - gnustep-libdispatch
 
 about:
   homepage: https://github.com/swiftlang/swift-corelibs-libdispatch

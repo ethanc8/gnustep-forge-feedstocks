@@ -12,7 +12,7 @@ source:
     sha256: b3792acc5aa0013ef51f3d02eaaf69fcce05ca6fe9924999b3565ebeb87d9d21
 
 build:
-  number: 0
+  number: 1
   script: build-base.sh
 
 requirements:
@@ -36,6 +36,8 @@ requirements:
     - libcurl
     - iconv
     - libiconv
+  run_exports:
+    - libgnustep-base
 
 
 about:

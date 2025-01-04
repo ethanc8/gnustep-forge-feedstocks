@@ -14,7 +14,7 @@ source:
     sha256: 637bc6af3e488bd097f3f198f1df26dc861558286de5612edf4b0daa41b1f455
 
 build:
-  number: 0
+  number: 1
   script: build-gui.sh
 
 requirements:
@@ -38,6 +38,8 @@ requirements:
     - libpng
     - libtiff
     # INSTALL recommends to have aspell, cups, audiofile, and portaudio, but Debian doesn't have those
+  run_exports:
+    - libgnustep-gui
 
 about:
   homepage: https://github.com/gnustep/libs-gui

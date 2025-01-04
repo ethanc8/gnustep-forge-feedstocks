@@ -11,7 +11,7 @@ source:
     sha256: 768ea8c5bd0999a29b5d15781125494f986456c1dc5c51d370fb31852cd31ea1
 
 build:
-  number: 2
+  number: 3
   script: build-libobjc2.sh
 
 requirements:
@@ -26,6 +26,8 @@ requirements:
   run:
     - gnustep-make
     - ${{ stdlib('c') }}
+  run_exports:
+    - gnustep-libobjc2
 
 about:
   homepage: https://github.com/gnustep/libobjc2
