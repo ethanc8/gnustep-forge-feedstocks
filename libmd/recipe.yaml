@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://libbsd.freedesktop.org/releases/libmd-${{ version }}.tar.xz
-    sha256: b3792acc5aa0013ef51f3d02eaaf69fcce05ca6fe9924999b3565ebeb87d9d21
+    sha256: 1bd6aa42275313af3141c7cf2e5b964e8b1fd488025caf2f971f43b00776b332
 
 build:
   number: 0
@@ -21,6 +21,8 @@ requirements:
     - ${{ stdlib('c') }}
   host:
     - ${{ stdlib('c') }}
+  run_exports:
+    - ${{ name }}
 
 about:
   homepage: https://www.hadrons.org/software/libmd/
