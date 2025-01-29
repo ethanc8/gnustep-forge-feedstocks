@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://libbsd.freedesktop.org/releases/libbsd-${{ version }}.tar.xz
-    sha256: b3792acc5aa0013ef51f3d02eaaf69fcce05ca6fe9924999b3565ebeb87d9d21
+    sha256: b88cc9163d0c652aaf39a99991d974ddba1c3a9711db8f1b5838af2a14731014
 
 build:
   number: 0
