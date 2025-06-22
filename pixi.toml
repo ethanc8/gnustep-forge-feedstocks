@@ -1,5 +1,5 @@
 [project]
-name = "gnustep-forge"
+name = "gnustep-forge-unstable"
 version = "0.1.0"
 description = "Add a short description here"
 authors = ["Ethan C"]

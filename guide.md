@@ -6,7 +6,7 @@ I wanted to introduce my recent work on Conda packaging of GNUstep. Conda, and i
 
 For GNUstep, this can make it a lot easier for new users to get started, and it could also make it easier to distribute GNUstep software. GNUstep libraries could be distributed as conda packages, and GNUstep apps could be distributed as conda packages which could then be turned into other formats. Conda environments can already be converted into AppImages, but the scripts to do so are kind of outdated and depend on the Anaconda `defaults` channel and the Miniconda installer. I intend to work on improving that and to make more output formats.
 
-I have packaged the core GNUstep software (in the `ng-gnu-gnu` configuration; Clang 18 as compiler, `ld.gold` as linker, `libdispatch`, `libobjc2` as Objective-C runtime, and using GNUstep Base for Foundation and GNUstep GUI for AppKit) on top of `conda-forge` for `linux-64` (glibc Linux on x86_64). glibc Linux on arm64 and ppc64le, macOS on x86_64 and arm64, and Windows on x86_64 are also supported by `conda-forge`. The package definitions are available at https://github.com/ethanc8/gnustep-forge-feedstocks/ and the binary packages are available at https://prefix.dev/channels/gnustep-forge.
+I have packaged the core GNUstep software (in the `ng-gnu-gnu` configuration; Clang 18 as compiler, `ld.gold` as linker, `libdispatch`, `libobjc2` as Objective-C runtime, and using GNUstep Base for Foundation and GNUstep GUI for AppKit) on top of `conda-forge` for `linux-64` (glibc Linux on x86_64). glibc Linux on arm64 and ppc64le, macOS on x86_64 and arm64, and Windows on x86_64 are also supported by `conda-forge`. The package definitions are available at https://github.com/ethanc8/gnustep-forge-unstable-feedstocks/ and the binary packages are available at https://prefix.dev/channels/gnustep-forge-unstable.
 
 ## Remaining contents
 
@@ -56,7 +56,7 @@ Create a file named `environment.yml` and in it, write: (you can omit the commen
 ```yaml
 name: gnustep
 channels: # package repositories
-  - https://repo.prefix.dev/gnustep-forge # My GNUstep packages
+  - https://repo.prefix.dev/gnustep-forge-unstable # My GNUstep packages
   - conda-forge # Community distribution of conda packages
   - nodefaults # Disable the `defaults` channel if for some reason it's enabled
 dependencies:
@@ -103,7 +103,7 @@ The GNUstep installation is located at `$CONDA_PREFIX/GNUstep`. On my system, th
 
 ## Packaging and distributing your own software
 
-Clone my repository https://github.com/ethanc8/gnustep-forge-feedstocks/, and copy the `gnustep-systempreferences` directory into a new directory with the name of your software.
+Clone my repository https://github.com/ethanc8/gnustep-forge-unstable-feedstocks/, and copy the `gnustep-systempreferences` directory into a new directory with the name of your software.
 
 These are the requirements I usually specify in `recipe.yaml`:
 
@@ -133,12 +133,12 @@ If you need to add more build steps, such as running `./configure`, just modify 
 You can now build the package using
 
 ```bash
-rattler-build build -c conda-forge -c https://prefix.dev/gnustep-forge
+rattler-build build -c conda-forge -c https://prefix.dev/gnustep-forge-unstable
 ```
 
 The built package will be in `output/linux-64`.
 
-If you want to publish it to https://prefix.dev/gnustep-forge, submit your package as a pull request to my repo and I will look over and merge it. If you want to make your own channel and host it at prefix.dev:
+If you want to publish it to https://prefix.dev/gnustep-forge-unstable, submit your package as a pull request to my repo and I will look over and merge it. If you want to make your own channel and host it at prefix.dev:
 
 1. Sign in to https://prefix.dev/.
 2. Create a channel at https://prefix.dev/channels/create.
@@ -152,7 +152,7 @@ If you want to publish it to https://prefix.dev/gnustep-forge, submit your packa
       run: |
         rattler-build build --recipe-dir . \
           --skip-existing=all --target-platform=$TARGET_PLATFORM \
-          -c conda-forge -c https://prefix.dev/gnustep-forge -c https://prefix.dev/<<<NAME OF YOUR CHANNEL>>>
+          -c conda-forge -c https://prefix.dev/gnustep-forge-unstable -c https://prefix.dev/<<<NAME OF YOUR CHANNEL>>>
       #   --experimental $(for file in **/variants.yaml; do echo "-m$file"; done) 
       # no longer necessary because it should be discovered by default
 
@@ -165,11 +165,11 @@ If you want to publish it to https://prefix.dev/gnustep-forge, submit your packa
       run: |
         # ignore errors because we want to ignore duplicate packages
         for file in output/**/*.conda; do
-          rattler-build upload prefix -c gnustep-forge -c <<<NAME OF YOUR CHANNEL>>> "$file" || true
+          rattler-build upload prefix -c gnustep-forge-unstable -c <<<NAME OF YOUR CHANNEL>>> "$file" || true
         done
 ```
 4. Commit your changes and push them to a GitHub repository.
-5. Grab an API key from https://prefix.dev/settings/api_keys and set it as a repository secret named `PREFIX_API_KEY` in the GitHub repository (for me, the appropriate settings page is at https://github.com/ethanc8/gnustep-forge-feedstocks/settings/secrets/actions)
+5. Grab an API key from https://prefix.dev/settings/api_keys and set it as a repository secret named `PREFIX_API_KEY` in the GitHub repository (for me, the appropriate settings page is at https://github.com/ethanc8/gnustep-forge-unstable-feedstocks/settings/secrets/actions)
 6. Enable GitHub Actions on your GitHub repository.
 
 You can also self-host the channel or host it at anaconda.org, but I don't know how to do that. You should be able to find instructions online on how to do it.
