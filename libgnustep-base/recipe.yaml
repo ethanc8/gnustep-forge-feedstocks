@@ -1,15 +1,15 @@
 context:
   name: libgnustep-base
-  version: 1.30.0
-  tag: base-1_30_0
+  version: 1.32.0a20250621
+  commit: c382de5c1d4a3085d951d3cf9273241d32f42f21
 
 package:
   name: ${{ name }}
   version: ${{ version }}
 
 source:
-  - url: https://github.com/gnustep/libs-base/archive/refs/tags/${{ tag }}.tar.gz
-    sha256: b3792acc5aa0013ef51f3d02eaaf69fcce05ca6fe9924999b3565ebeb87d9d21
+  - git: https://github.com/gnustep/libs-base
+    rev: ${{ commit }}
 
 build:
   number: 1

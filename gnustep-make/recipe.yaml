@@ -1,15 +1,15 @@
 context:
   name: gnustep-make
-  version: 2.9.2
-  tag: make-2_9_2
+  version: 2.9.4a20250610
+  commit: faa64aad2131016805eb12e1157163b6e4c374e0
 
 package:
   name: ${{ name }}
   version: ${{ version }}
 
 source:
-  - url: https://github.com/gnustep/tools-make/archive/refs/tags/${{ tag }}.tar.gz
-    sha256: b3fdee058879675f6979c553fb6172b160ca79ffd0f170f51379326b7922941a
+  - git: https://github.com/gnustep/tools-make
+    rev: ${{ commit }}
 
 build:
   number: 1

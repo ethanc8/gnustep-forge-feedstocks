@@ -1,17 +1,15 @@
 context:
   name: libgnustep-gui
-  # Unfortunately 0.31.1 doesn't build.
-  version: 0.32.0a20241216
-  # tag: gui-0_31_1
-  commit: e489d43ef187b96c1e1bdd74dca6a56548791478 # 2024-12-16
+  version: 0.33.0a20250512
+  commit: 302d0cc90bbd418c0f52d8733eefb60d326549dd
 
 package:
   name: ${{ name }}
   version: ${{ version }}
 
 source:
-  - url: https://github.com/gnustep/libs-gui/archive/${{ commit }}.tar.gz
-    sha256: 637bc6af3e488bd097f3f198f1df26dc861558286de5612edf4b0daa41b1f455
+  - git: https://github.com/gnustep/libs-gui
+    rev: ${{ commit }}
 
 build:
   number: 1
