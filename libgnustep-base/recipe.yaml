@@ -1,7 +1,7 @@
 context:
   name: libgnustep-base
-  version: 1.32.0a20250621
-  commit: c382de5c1d4a3085d951d3cf9273241d32f42f21
+  version: 1.32.0a20250622
+  commit: ec6299f72faa04f4bb019d4f2a0984fe832b09c0
 
 package:
   name: ${{ name }}
