@@ -5,6 +5,9 @@ on:
     branches:
       - unstable
   workflow_dispatch:
+  schedule:
+    # Nightly job at 02:30 UTC every day
+    - cron: "30 2 * * *"
 
 jobs:
 
@@ -46,6 +49,7 @@ jobs:
         TARGET_PLATFORM: ${{ matrix.target }}
 
       run: |
+        export YYMMDD=$(date '+%Y%m%d')
         rattler-build build --recipe-dir . \
           --skip-existing=all --target-platform=$TARGET_PLATFORM \
           -c conda-forge -c https://prefix.dev/gnustep-forge-unstable

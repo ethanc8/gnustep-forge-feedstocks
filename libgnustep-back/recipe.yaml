@@ -1,7 +1,6 @@
 context:
   name: libgnustep-back
-  version: 0.33.0a20250521
-  commit: d27791933ec25403ff5553670061a423c2b1b22a
+  version: 0.33.0a${{ env.get("YYMMDD") }}
 
 package:
   name: ${{ name }}
@@ -9,7 +8,6 @@ package:
 
 source:
   - git: https://github.com/gnustep/libs-back
-    rev: ${{ commit }}
 
 build:
   number: 0

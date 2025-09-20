@@ -1,7 +1,6 @@
 context:
   name: gnustep-make
-  version: 2.9.4a20250610
-  commit: faa64aad2131016805eb12e1157163b6e4c374e0
+  version: 2.9.4a${{ env.get("YYMMDD") }}
 
 package:
   name: ${{ name }}
@@ -9,7 +8,6 @@ package:
 
 source:
   - git: https://github.com/gnustep/tools-make
-    rev: ${{ commit }}
 
 build:
   number: 0

@@ -1,7 +1,6 @@
 context:
   name: libgnustep-base
-  version: 1.32.0a20250622
-  commit: ec6299f72faa04f4bb019d4f2a0984fe832b09c0
+  version: 1.32.0a${{ env.get("YYMMDD") }}
 
 package:
   name: ${{ name }}
@@ -9,7 +8,6 @@ package:
 
 source:
   - git: https://github.com/gnustep/libs-base
-    rev: ${{ commit }}
 
 build:
   number: 0
