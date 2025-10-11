@@ -1,6 +1,6 @@
 context:
   name: gnustep-libobjc2
-  version: 2.2.1
+  version: 2.3
 
 package:
   name: ${{ name }}
@@ -8,10 +8,10 @@ package:
 
 source:
   - url: https://github.com/gnustep/libobjc2/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 768ea8c5bd0999a29b5d15781125494f986456c1dc5c51d370fb31852cd31ea1
+    sha256: 5ead2276b42a534ac40437ce53b2231320b985539dc325453d93874be8d92869
 
 build:
-  number: 3
+  number: 0
   script: build-libobjc2.sh
 
 requirements:
@@ -21,9 +21,11 @@ requirements:
     - ${{ stdlib('c') }}
     - ninja
   host:
+    - gnustep-libdispatch
     - gnustep-make
     - ${{ stdlib('c') }}
   run:
+    - gnustep-libdispatch
     - gnustep-make
     - ${{ stdlib('c') }}
   run_exports:
