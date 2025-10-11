@@ -13,7 +13,6 @@ source:
 build:
   number: 0
   script: build-libobjc2.sh
-  skip: true
 
 requirements:
   build:
