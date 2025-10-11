@@ -1,6 +1,6 @@
 context:
   name: gnustep-libdispatch
-  version: 5.10.1
+  version: 6.2
 
 package:
   name: ${{ name }}
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/swiftlang/swift-corelibs-libdispatch/archive/refs/tags/swift-${{ version }}-RELEASE.tar.gz
-    sha256: affa3544b0fdb60f8f175bc0d2846177436d5848ef8ca73e3e560d23986f38b3
+    sha256: d4b8171d6711dabc3cb81093e954cedd521c8e4c170a688c1c369194c9eae4b3
 
 build:
   number: 1
