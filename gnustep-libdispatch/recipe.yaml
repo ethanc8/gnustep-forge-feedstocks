@@ -11,7 +11,7 @@ source:
     sha256: d4b8171d6711dabc3cb81093e954cedd521c8e4c170a688c1c369194c9eae4b3
 
 build:
-  number: 1
+  number: 2
   script: build-libdispatch.sh
 
 requirements:
