@@ -28,6 +28,7 @@ extra_cmake_args=(
     -DCMAKE_INSTALL_INFODIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_DOC_INFO)"
     -DCMAKE_INSTALL_DOCDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_DOC)"
     -DCMAKE_INSTALL_DATAROOTDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARY)"
+    -DINSTALL_PRIVATE_HEADERS=ON
     -DTESTS=OFF
 )
 
