@@ -20,14 +20,14 @@ extra_cmake_args=(
     -DCMAKE_ASM_COMPILER="${CC}"
     -DCMAKE_LINKER="${LD}"
     -DCMAKE_MODULE_LINKER_FLAGS="${LDFLAGS}"
-    -DCMAKE_INSTALL_BINDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_TOOLS)"
-    -DCMAKE_INSTALL_LIBDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARIES)"
-    -DCMAKE_INSTALL_INCLUDEDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS)"
-    -DCMAKE_INSTALL_OLDINCLUDEDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS)"
-    -DCMAKE_INSTALL_MANDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_DOC_MAN)"
-    -DCMAKE_INSTALL_INFODIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_DOC_INFO)"
-    -DCMAKE_INSTALL_DOCDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_DOC)"
-    -DCMAKE_INSTALL_DATAROOTDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARY)"
+    # -DCMAKE_INSTALL_BINDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_TOOLS)"
+    # -DCMAKE_INSTALL_LIBDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARIES)"
+    # -DCMAKE_INSTALL_INCLUDEDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS)"
+    # -DCMAKE_INSTALL_OLDINCLUDEDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_HEADERS)"
+    # -DCMAKE_INSTALL_MANDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_DOC_MAN)"
+    # -DCMAKE_INSTALL_INFODIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_DOC_INFO)"
+    # -DCMAKE_INSTALL_DOCDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_DOC)"
+    # -DCMAKE_INSTALL_DATAROOTDIR="$(gnustep-config --variable=GNUSTEP_SYSTEM_LIBRARY)"
     -DINSTALL_PRIVATE_HEADERS=ON
     -DTESTS=OFF
 )
