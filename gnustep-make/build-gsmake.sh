@@ -2,7 +2,7 @@
 
 export CC="clang"
 export CXX="clang++"
-export LD="$(which lld)"
+export LD="$(which ld.lld)"
 
 extra_configure_args=(
     --with-library-combo=ng-gnu-gnu

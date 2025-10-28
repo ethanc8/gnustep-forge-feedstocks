@@ -12,7 +12,7 @@ source:
     sha256: aad12caecb0398b099f3b8b0282cecc3f01a9f371200641b2e1e535ae6ee2543
 
 build:
-  number: 1
+  number: 2
   script: build-gsmake.sh
 
 requirements:

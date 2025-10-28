@@ -12,7 +12,7 @@ source:
     sha256: 40125db52808abef4a08433c43ab856dcad3c24f909531655fc794145fd2c8ab
 
 build:
-  number: 0
+  number: 1
   script: build-systempreferences.sh
 
 requirements:
