@@ -11,7 +11,11 @@ This forge's build scripts are based on Wolf Vollprecht's https://github.com/wol
 
 ## TODO
 
+* [ ] Switch to LLD
 * [ ] Finish upgrading to latest versions as of October 2025
 * [ ] Have libobjc2 depend on libdispatch's BlocksRuntime
 * [ ] Package a lot of other important GNUstep libraries
+* [ ] Make separate packages for the documentation
+* [ ] Produce packages for other platforms
+* [ ] Make it cross-compile between architectures
 * [ ] Make the distribution system, producing AppImages, EXEs, etc.
