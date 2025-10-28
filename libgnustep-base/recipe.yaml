@@ -10,6 +10,8 @@ package:
 source:
   - url: https://github.com/gnustep/libs-base/archive/refs/tags/${{ tag }}.tar.gz
     sha256: 612e4415efc486c9e7017b00b28b0e122dc739d29b8e5d57ce79bf1a86a9862b
+    patches:
+      - expose-when-ndebug.patch
 
 build:
   number: 1
@@ -29,7 +31,7 @@ requirements:
     - libffi
     - icu
     - gnutls
-    - libxml2
+    - libxml2-devel
     - libxslt
     - avahi
     - zlib
