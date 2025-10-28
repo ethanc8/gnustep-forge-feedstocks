@@ -1,7 +1,7 @@
 context:
   name: gnustep-make
-  version: 2.9.2
-  tag: make-2_9_2
+  version: 2.9.3
+  tag: make-2_9_3
 
 package:
   name: ${{ name }}
@@ -9,10 +9,10 @@ package:
 
 source:
   - url: https://github.com/gnustep/tools-make/archive/refs/tags/${{ tag }}.tar.gz
-    sha256: b3fdee058879675f6979c553fb6172b160ca79ffd0f170f51379326b7922941a
+    sha256: aad12caecb0398b099f3b8b0282cecc3f01a9f371200641b2e1e535ae6ee2543
 
 build:
-  number: 1
+  number: 0
   script: build-gsmake.sh
 
 requirements:
