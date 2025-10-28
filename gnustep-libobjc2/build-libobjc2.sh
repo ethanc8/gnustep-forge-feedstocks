@@ -1,15 +1,9 @@
 #!/bin/bash
 
-source "$PREFIX/GNUstep/System/Library/Makefiles/GNUstep.sh"
-
 export CC="clang"
 export CXX="clang++"
-export LD="$(which ld.gold)"
+export LD="$(which lld)"
 export LDFLAGS="-fuse-ld=$LD"
-
-# pre-create some directories
-mkdir -p "$PREFIX/GNUstep/Local/Library/Libraries"
-mkdir -p "$PREFIX/GNUstep/Local/Library/Headers"
 
 mkdir build
 cd build
