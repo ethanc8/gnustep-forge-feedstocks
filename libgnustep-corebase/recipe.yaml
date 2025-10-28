@@ -1,0 +1,44 @@
+context:
+  name: libgnustep-corebase
+  version: 0.3.0a20230710
+  commit: e5983493d5ddf9c5b7e562f166855d9517a3f179
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/gnustep/libs-corebase/archive/${{ commit }}.tar.gz
+    sha256: 2cedf89255e874c2d4de7cb24d4ec25f51a3996c45361443815e7eb256e1851a
+
+build:
+  number: 0
+  script: build-corebase.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - ninja
+  host:
+    - ${{ stdlib('c') }}
+    - gnustep-make
+    - gnustep-libobjc2
+    - gnustep-libdispatch
+    - libgnustep-base
+    - icu
+  run_exports:
+    - libgnustep-corebase
+
+about:
+  homepage: https://github.com/gnustep/libs-corebase
+  license: LGPL-2.0-or-later
+  license_file: 
+    - COPYING.LIB
+    - COPYING
+  summary: GNUstep implementation of CoreFoundation
+
+extra:
+  recipe-maintainers:
+    - ethanc8
