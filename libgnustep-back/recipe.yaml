@@ -1,20 +1,20 @@
 context:
   name: libgnustep-back
-  # Unfortunately gui-0.31.1 doesn't build and we used the master branch of gui.
-  version: 0.32.0a20241105
-  commit: 03a2e7e152320ec2bbd071f7ca1177672011f130 # 2024-11-05
+  version: 0.32.0
+  tag: back-0_32_0
 
 package:
   name: ${{ name }}
   version: ${{ version }}
 
 source:
-  - url: https://github.com/gnustep/libs-back/archive/${{ commit }}.tar.gz
-    sha256: 4f868655c9d30ee5efbb0236800898efcc9406860e1857f3bb09243cf8cc4141
+  - url: https://github.com/gnustep/libs-back/archive/refs/tags/${{ tag }}.tar.gz
+    sha256: e4c3a2529a6a4cfe2e2427560707059f9d7435df381bc04df95fc15e05403b3b
 
 build:
-  number: 1
+  number: 0
   script: build-back.sh
+  skip: true
 
 requirements:
   build:
