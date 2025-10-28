@@ -11,7 +11,7 @@ source:
     sha256: 5ead2276b42a534ac40437ce53b2231320b985539dc325453d93874be8d92869
 
 build:
-  number: 3
+  number: 4
   script: build-libobjc2.sh
 
 requirements:
