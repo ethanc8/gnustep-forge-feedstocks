@@ -12,7 +12,6 @@ source:
     sha256: 8dc3086b2993e7f1bc3648357e5b7fca09c57a605ada05379b0a0fcc31499536
 
 build:
-  number: 0
   script: build-gui.sh
   skip: true
 

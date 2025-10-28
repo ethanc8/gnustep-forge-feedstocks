@@ -4,8 +4,7 @@ source "$PREFIX/GNUstep/System/Library/Makefiles/GNUstep.sh"
 
 export CC="clang"
 export CXX="clang++"
-export LD="$(which ld.gold)"
-export LDFLAGS="-fuse-ld=$LD $(gnustep-config --objc-libs)"
+export LD="$(which lld)"
 
 # Build
 
