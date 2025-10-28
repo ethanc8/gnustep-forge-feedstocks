@@ -4,7 +4,7 @@ source "$PREFIX/GNUstep/System/Library/Makefiles/GNUstep.sh"
 
 export CC="clang"
 export CXX="clang++"
-export LD="$(which ld.gold)"
+export LD="$(which lld)"
 
 # Build
 
