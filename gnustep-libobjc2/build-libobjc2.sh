@@ -1,8 +1,10 @@
 #!/bin/bash
 
+source "$PREFIX/GNUstep/System/Library/Makefiles/GNUstep.sh"
+
 export CC="clang"
 export CXX="clang++"
-export LD="$(which lld)"
+export LD="$(which ld.gold)"
 export LDFLAGS="-fuse-ld=$LD"
 
 mkdir build
