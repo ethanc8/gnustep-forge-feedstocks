@@ -21,7 +21,7 @@ extra_cmake_args=(
     -DCMAKE_ASM_COMPILER="${CC}"
     -DCMAKE_LINKER="${LD}"
     -DCMAKE_MODULE_LINKER_FLAGS="${LDFLAGS}"
-    -DEMBEDDED_BLOCKS_RUNTIME=OFF
+    # -DEMBEDDED_BLOCKS_RUNTIME=OFF
 )
 
 cmake -GNinja ${CMAKE_ARGS} "${extra_cmake_args[@]}" \
