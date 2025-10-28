@@ -1,7 +1,7 @@
 context:
   name: libgnustep-base
-  version: 1.30.0
-  tag: base-1_30_0
+  version: 1.31.1
+  tag: base-1_31_1
 
 package:
   name: ${{ name }}
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/gnustep/libs-base/archive/refs/tags/${{ tag }}.tar.gz
-    sha256: b3792acc5aa0013ef51f3d02eaaf69fcce05ca6fe9924999b3565ebeb87d9d21
+    sha256: 612e4415efc486c9e7017b00b28b0e122dc739d29b8e5d57ce79bf1a86a9862b
 
 build:
   number: 1
