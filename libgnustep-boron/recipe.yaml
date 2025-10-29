@@ -1,0 +1,46 @@
+context:
+  name: libgnustep-boron
+  version: 0.2.0a20251028
+  commit: df5dd62818f9c358a6ba5cb4feae4d62cd6af362
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/ethanc8/libs-boron/archive/${{ commit }}.tar.gz
+    sha256: c9a7f12a658721f6c7d54db3ab41a34865671a39446e00e4a501e7e9358cffc7
+
+build:
+  number: 0
+  script: build-boron.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - ninja
+  host:
+    - ${{ stdlib('c') }}
+    - gnustep-make
+    - gnustep-libobjc2
+    - gnustep-libdispatch
+    - libgnustep-base
+    - libgnustep-corebase
+    - libgnustep-quartzcore
+    - icu
+  run_exports:
+    - libgnustep-boron
+
+about:
+  homepage: https://github.com/gnustep/libs-boron
+  license: LGPL-2.0-or-later
+  license_file: 
+    - COPYING.LIB
+    - COPYING
+  summary: GNUstep implementation of parts of ApplicationServices and CoreServices
+
+extra:
+  recipe-maintainers:
+    - ethanc8
