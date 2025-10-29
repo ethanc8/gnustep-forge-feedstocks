@@ -1,0 +1,47 @@
+context:
+  name: libgnustep-quartzcore
+  version: 0.2.0a20251028
+  commit: 75263c5d09f9fbfb25b534d3517c94f4d9380c80
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/ethanc8/libs-quartzcore/archive/${{ commit }}.tar.gz
+    sha256: f44e4db23cdda7f58ff2baaf4d35a5869f2e6b0452b45f14bd3d22870e5bbc16
+
+build:
+  number: 0
+  script: build-quartzcore.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - ninja
+  host:
+    - ${{ stdlib('c') }}
+    - gnustep-make
+    - gnustep-libobjc2
+    - gnustep-libdispatch
+    - libgnustep-base
+    - libgnustep-corebase
+    - libgnustep-opal
+    - libgnustep-gui
+    - libgl-devel
+    - glew
+  run_exports:
+    - libgnustep-quartzcore
+
+about:
+  homepage: https://github.com/gnustep/libs-quartzcore
+  license: LGPL-2.1-or-later
+  license_file: 
+    - COPYING
+  summary: GNUstep implementation of CoreAnimation
+
+extra:
+  recipe-maintainers:
+    - ethanc8
