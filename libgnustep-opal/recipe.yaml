@@ -12,7 +12,7 @@ source:
     sha256: 033ab757ee96cfa1a92402e529ac295dab0fba6efe4faac7902df66393d818bd
 
 build:
-  number: 0
+  number: 1
   script: build-opal.sh
 
 requirements:
@@ -38,7 +38,7 @@ requirements:
     - xorg-libx11
     - xorg-xproto
   run_exports:
-    - libgnustep-boron
+    - libgnustep-opal
 
 about:
   homepage: https://github.com/gnustep/libs-opal
