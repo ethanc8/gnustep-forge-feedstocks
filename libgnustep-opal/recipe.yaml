@@ -1,0 +1,52 @@
+context:
+  name: libgnustep-opal
+  version: 0.1.0a20251028
+  commit: f9a056a539c17db494d7910fd4d9ab71ecbe3a35
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  - url: https://github.com/ethanc8/libs-opal/archive/${{ commit }}.tar.gz
+    sha256: 033ab757ee96cfa1a92402e529ac295dab0fba6efe4faac7902df66393d818bd
+
+build:
+  number: 0
+  script: build-opal.sh
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+    - ninja
+  host:
+    - ${{ stdlib('c') }}
+    - gnustep-make
+    - gnustep-libobjc2
+    - gnustep-libdispatch
+    - libgnustep-base
+    - libgnustep-corebase
+    - cairo
+    - libjpeg-turbo
+    - libpng
+    - libtiff
+    - lcms2
+    - freetype
+    - fontconfig
+    - xorg-libx11
+    - xorg-xproto
+  run_exports:
+    - libgnustep-boron
+
+about:
+  homepage: https://github.com/gnustep/libs-opal
+  license: LGPL-2.1-or-later
+  license_file: 
+    - COPYING
+  summary: GNUstep implementation of CoreGraphics
+
+extra:
+  recipe-maintainers:
+    - ethanc8
