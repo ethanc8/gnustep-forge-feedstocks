@@ -12,7 +12,7 @@ source:
     sha256: f44e4db23cdda7f58ff2baaf4d35a5869f2e6b0452b45f14bd3d22870e5bbc16
 
 build:
-  number: 0
+  number: 1
   script: build-quartzcore.sh
 
 requirements:
